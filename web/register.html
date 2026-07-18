@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-box">
+<h2>Create Account</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="register()">Create Account</button>
+
+<p id="msg"></p>
+
+</div>
+
+<script>
+function register(){
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let password=document.getElementById("password").value;
+
+if(name=="" || email=="" || password==""){
+document.getElementById("msg").innerHTML="Please fill all fields";
+return;
+}
+
+document.getElementById("msg").style.color="green";
+document.getElementById("msg").innerHTML="Account Created Successfully";
+
+}
+</script>
+
+</body>
+</html>
