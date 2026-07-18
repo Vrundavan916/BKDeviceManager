@@ -1,11 +1,25 @@
-function login() {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+import { auth } from "./firebase.js";
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    if (email === "admin@bk.com" && password === "123456") {
-        window.location.href = "dashboard.html";
-    } else {
-        document.getElementById("msg").style.color = "red";
-        document.getElementById("msg").innerHTML = "Invalid Email or Password";
+window.login = async function () {
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const msg = document.getElementById("msg");
+
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+
+        msg.style.color = "green";
+        msg.innerHTML = "Login Successful";
+
+        setTimeout(() => {
+            window.location.href = "dashboard.html";
+        }, 1000);
+
+    } catch (error) {
+        msg.style.color = "red";
+        msg.innerHTML = error.message;
     }
+
 }
