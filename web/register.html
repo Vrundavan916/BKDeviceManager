@@ -23,24 +23,5 @@
 
 </div>
 
-<script>
-function register(){
-
-let name=document.getElementById("name").value;
-let email=document.getElementById("email").value;
-let password=document.getElementById("password").value;
-
-if(name=="" || email=="" || password==""){
-document.getElementById("msg").innerHTML="Please fill all fields";
-return;
-}
-
-document.getElementById("msg").style.color="green";
-document.getElementById("msg").innerHTML="Account Created Successfully";
-
-}
-
 <script type="module" src="firebase.js"></script>
 <script type="module" src="register.js"></script>
-</body>
-</html>
