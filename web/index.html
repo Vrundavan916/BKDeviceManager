@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>BK Device Manager</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BK Device Manager</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<div class="login-box">
     <h1>BK Device Manager</h1>
-    <p>Legal Device Management Dashboard</p>
+
+    <input type="email" id="email" placeholder="Email">
+
+    <input type="password" id="password" placeholder="Password">
 
     <button onclick="login()">Login</button>
 
-    <script>
-        function login() {
-            alert("Login Page Coming Soon");
-        }
-    </script>
+    <p id="msg"></p>
+</div>
+
+<script src="app.js"></script>
+
 </body>
 </html>
